@@ -1,13 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Alpha Blog
 
-Things you may want to cover:
+BDD Covered:
 
-* Ruby version
+* RSPEC
 
-* System dependencies
+* Capybera
 
 * Configuration
 
@@ -20,5 +19,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
