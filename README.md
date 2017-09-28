@@ -2,20 +2,10 @@
 
 Alpha Blog
 
-BDD Covered:
+BDD Covered: Rspec and Capybera
 
-* RSPEC
+- Write out the scenario in a test file
+- 
+First step - feature will fail!
 
-* Capybera
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+- Build the features one by one until the test passes
