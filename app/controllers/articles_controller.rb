@@ -11,10 +11,10 @@ class ArticlesController < ApplicationController
     
     if @article.save
       flash[:success] = "Article has been created"
-      redirect_to articles_path
+      redirect_to articles_path # flash waits for redirect
     else
-      flash[:danger] = "Article has not been created"
-      render :new
+      flash.now[:danger] = "Article has not been created"
+      render :new # flash is waiting in queue until new page is rendered, hence it lingers
     end
   end
   
