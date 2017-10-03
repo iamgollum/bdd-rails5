@@ -12,7 +12,7 @@ RSpec.feature "Listing Articles" do
     @articles = [@article1, @article2]
   end
   
-  scenario "A user can view all articles" do
+  scenario "A user has articles" do
     visit "/"
     
     # expect(page).to have_content("Articles")
@@ -24,4 +24,20 @@ RSpec.feature "Listing Articles" do
       expect(page).to have_content(article.body)
     end
   end
+  
+    scenario "A user has no articles" do
+      
+      Article.delete_all
+      visit "/"
+      
+      @articles.each do  |article|
+        expect(page).not_to have_content(article.title)
+        expect(page).not_to have_link(article.title)
+        expect(page).not_to have_content(article.body)
+      end
+      
+      within ("h1#no-articles") do
+        expect(page).to have_content("No Articles Created")
+      end
+    end
 end
