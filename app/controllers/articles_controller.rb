@@ -23,6 +23,22 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
   
+  def edit
+    @article = Article.find(params[:id])
+  end
+  
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      flash[:success] = "Article has been updated"
+      redirect_to @article # rails is smart enouph to redirect to particular article page
+    else
+      flash.now[:danger] = "Article has not been updated"
+      render :new # flash is waiting in queue until new page is rendered, hence it lingers
+    end
+  end
+  
   protected
   
     def resource_not_found
